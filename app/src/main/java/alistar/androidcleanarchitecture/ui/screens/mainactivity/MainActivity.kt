@@ -1,4 +1,4 @@
-package alistar.androidcleanarchitecture.internal.ui.screens.mainactivity
+package alistar.androidcleanarchitecture.ui.screens.mainactivity
 
 import alistar.androidcleanarchitecture.R
 import alistar.androidcleanarchitecture.databinding.ActivityMainBinding
