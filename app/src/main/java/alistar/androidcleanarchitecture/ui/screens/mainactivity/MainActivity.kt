@@ -11,6 +11,8 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 
 class MainActivity : DaggerAppCompatActivity() {
 
