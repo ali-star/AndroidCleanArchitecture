@@ -1,4 +1,4 @@
-package alistar.domain.usecases
+package alistar.core.usecases
 
 open abstract class UseCase<Request, Response> {
 

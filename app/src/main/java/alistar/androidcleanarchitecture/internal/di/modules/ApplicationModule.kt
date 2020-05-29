@@ -2,7 +2,7 @@ package alistar.androidcleanarchitecture.internal.di.modules
 
 import alistar.androidcleanarchitecture.App
 import alistar.data.RemoteRepoImpl
-import alistar.domain.repositories.RemoteRepo
+import alistar.core.data.RemoteRepo
 import android.content.Context
 import dagger.Module
 import dagger.Provides

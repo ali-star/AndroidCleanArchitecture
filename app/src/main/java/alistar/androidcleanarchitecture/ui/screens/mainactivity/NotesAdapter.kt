@@ -1,7 +1,7 @@
 package alistar.androidcleanarchitecture.ui.screens.mainactivity
 
 import alistar.androidcleanarchitecture.databinding.NoteListItemBinding
-import alistar.domain.entities.Note
+import alistar.core.domain.entities.Note
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -4,6 +4,7 @@ import alistar.androidcleanarchitecture.R
 import alistar.androidcleanarchitecture.databinding.ActivityMainBinding
 import alistar.androidcleanarchitecture.internal.di.AppViewModelFactory
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import javax.inject.Inject
@@ -11,8 +12,8 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.support.DaggerAppCompatActivity
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.*
+import java.lang.RuntimeException
 
 class MainActivity : DaggerAppCompatActivity() {
 
@@ -43,6 +44,34 @@ class MainActivity : DaggerAppCompatActivity() {
         })
 
         viewModel.getNotes()
+
+        runTest()
+    }
+
+    val mainActivityJob = Job()
+
+    suspend fun doWork(): String = withContext(Dispatchers.Default) { "Hi" }
+
+    fun runTest() {
+        val exceptionHandler = CoroutineExceptionHandler { _, e ->
+            e.printStackTrace()
+        }
+
+        val mScope = CoroutineScope(Dispatchers.Default + mainActivityJob + exceptionHandler)
+
+        val job = mScope.launch {
+            (1 .. 100).map {
+                Log.i(MainActivity::class.java.name, doWork() +"job"+ " $it")
+            }
+
+        }
+        val job1 = mScope.launch {
+            (1 .. 100).map {
+                Log.i(MainActivity::class.java.name, doWork() +"job1"+ " $it")
+            }
+
+        }
+        mainActivityJob.cancel()
     }
 
     override fun onDestroy() {

@@ -1,7 +1,7 @@
 package alistar.androidcleanarchitecture.ui.screens.mainactivity
 
-import alistar.domain.entities.Note
-import alistar.domain.usecases.GetNotesUseCase
+import alistar.core.domain.entities.Note
+import alistar.core.usecases.GetNotesUseCase
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

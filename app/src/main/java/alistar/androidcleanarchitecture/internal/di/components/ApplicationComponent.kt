@@ -3,7 +3,7 @@ package alistar.androidcleanarchitecture.internal.di.components
 import alistar.androidcleanarchitecture.App
 import alistar.androidcleanarchitecture.internal.di.modules.ApplicationModule
 import alistar.androidcleanarchitecture.internal.di.modules.BindingModule
-import alistar.domain.repositories.RemoteRepo
+import alistar.core.data.RemoteRepo
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
